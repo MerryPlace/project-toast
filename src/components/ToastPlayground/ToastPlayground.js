@@ -13,7 +13,7 @@ function ToastPlayground() {
   const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
   const [message, setMessage] = React.useState("");
 
-  const { addToast } = React.useContext(ToastContext);
+  const { addToast, toasts } = React.useContext(ToastContext);
 
   return (
     <div className={styles.wrapper}>
@@ -22,7 +22,7 @@ function ToastPlayground() {
         <h1>Toast Playground</h1>
       </header>
 
-      <ToastShelf></ToastShelf>
+      {toasts.length > 0 && <ToastShelf />}
 
       <div className={styles.controlsWrapper}>
         <div className={styles.row}>

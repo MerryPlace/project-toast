@@ -12,20 +12,6 @@ function ToastShelf() {
 
   useOnKeyDown("Escape", clearToasts);
 
-  React.useEffect(() => {
-    function handleEscape(event) {
-      if (event.code === "Escape") {
-        clearToasts();
-      }
-    }
-
-    window.addEventListener("keydown", handleEscape);
-
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [clearToasts]);
-
   return (
     <ol
       className={styles.wrapper}
